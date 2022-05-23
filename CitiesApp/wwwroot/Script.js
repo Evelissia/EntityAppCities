@@ -33,13 +33,11 @@
                 map: this.map,
                 title: city.name
             });
-            // Для каждого объекта добавляем доп. информацию, выводимую в отдельном окне
             const infowindow = new google.maps.InfoWindow({
                 content: `<div class='name'><h2>${city.name}</h2><div><h4>Население:
                     ${city.population}</h4></div><div><h4>Округ: ${city.district}</h4></div><div><h4>Область: ${city.subject}</h4></div></div>`
             });
 
-            // обработчик нажатия на маркер объекта
             google.maps.event.addListener(marker, 'click', function () {
                 infowindow.open(this.map, marker);
             });
